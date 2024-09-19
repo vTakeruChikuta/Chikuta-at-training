@@ -1,0 +1,40 @@
+cd C:\Users\takeru.chikuta\Documents\Playwright_Training\playwright_trainings
+pytest test_hotel_planisphere.py --headed
+
+      self.page.goto("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
+
+      from dateutil.relativedelta import relativedelta
+
+
+
+      #contact
+
+       self.page.goto("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
+
+        page.wait_for_load_state()
+        page.screenshot(path="sample.png")
+        assert page.text_content("#total-bill") == "合計 44,000円（税込み）"
+
+
+ページ遷移の度に待機を入れると安定する
+ノーブレークスペースは、画面表示の前に存在していて、表示するときにノーブレークスペースに対応する値を代入するために使われたりする。
+待機してないと、このときのノーブレークスペースが認識されたりする。
+
+最初の文言はわりと定型文なとこある。
+@pytest.fixture(scope="function", autouse = True)
+    def page_fixture(self, page: Page):
+        self.page = page  くらいは覚えたほうがいい
+「Page」がなんなのか（Pageオブジェクト）とかは公式でしらべよう！！
+コメントはそんなにいらない。ソースよんでわかるものならなくてよい。
+読んでもよくわからんようなものに必要
+
+名前には気を付けよう！ほかの関数と同じだと動かなかったりするぞ！
+スペルミスにも気を付けよう！気になる人は気になる。
+printと違って、変数に文字列と変数を入れたいときは
+　　total_bill_true = f"合計{money}円（税込み）"
+こんな感じにしないといけない
+
+boolを扱うときは比較演算子はisにすること
+変数も同様に「is_xxxx」がよい
+エラーメッセージに期待値を書くのかエラー内容を書くのかは案件によって違うので要確認
+テストケースのメソッド名はtest始まりじゃないと実行されない

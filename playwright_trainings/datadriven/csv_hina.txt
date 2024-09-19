@@ -1,0 +1,4 @@
+csse_no date dyas hedcount breakfast early_checkin sightseeing username contact total 
+case1 1 9 1 yes yas yas 高塩太郎 no 81,000
+case2 20 8 2 yes yes no takasiotaro mail 140,500
+case3 90 7 3 yes no yes たかしおたろう no 181,500

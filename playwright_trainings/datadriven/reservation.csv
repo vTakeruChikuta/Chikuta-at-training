@@ -1,0 +1,4 @@
+case_no,date,days,headcount,breakfast,early_checkin,sightseeing,username,contact,total
+"case1","4","9","1","yes","yes","yes","高塩太郎","no","77,500"
+"case2","4","8","2","yes","yes","no","takasiotaro","mail","137,000"
+"case3","4","7","3","yes","no","yes","たかしおたろう","call","181,500"
